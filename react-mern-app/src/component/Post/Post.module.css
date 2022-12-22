@@ -1,0 +1,40 @@
+.Post {
+    height: 150px;
+    width: auto;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    grid-column: 2/5;
+    grid-row: 2/3;
+
+
+    border-radius: 10px;
+}
+
+.Post div {
+    height: 50px;
+    width: 100%;
+    grid-column: 2/5;
+    grid-row: 2/4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    
+}
+
+.Post input {
+    height: 35px;
+    width: 95%;
+    margin: 5px;
+    border-radius: 10px;
+    
+}
+.Post img{
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+    display: flex;
+    border-radius: 50%;
+}

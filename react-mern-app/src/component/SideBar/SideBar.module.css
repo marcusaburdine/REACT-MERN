@@ -1,0 +1,36 @@
+
+.SideBar {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+  }
+  
+  .SideBar a {
+    margin: 20px;
+    display: flex;
+    text-decoration: none;
+    border-radius: 10px;
+  }
+
+  .SideBar a:hover{
+    background-color: grey;
+  }
+
+  .SideBar img{
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+    display: flex;
+    border-radius: 50%;
+   
+
+  }
+  
+  .SideBar p {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
