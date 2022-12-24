@@ -12,9 +12,9 @@ export default function SideBar() {
         <p><strong>Profile</strong></p>
       </Link>
 
-      <Link to="/friends">
+      <Link to="/pokemon">
         <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-poke-food-illustration_52683-82121.jpg?w=2000" alt="img" />
-        <p><strong>Friends</strong></p>
+        <p><strong>Pokemon</strong></p>
       </Link>
 
       <Link to="/news">

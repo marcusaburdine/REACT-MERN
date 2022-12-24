@@ -1,9 +1,8 @@
 
 import './App.css';
-
 import { getUser } from '../../utilities/users-service';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Nav from "../../component/Nav/Nav"
 import SideBar from "../../component/SideBar/SideBar"
 import AuthPage from '../AuthPage/AuthPage';
@@ -12,6 +11,7 @@ import Marketplace from "../Marketplace/Marketplace"
 import Groups from "../Groups/Groups"
 import Gaming from "../Gaming/Gaming"
 import Profile from "../Profile/Profile"
+import Pokemon from "../Pokemon/Pokemon"
 import Post from "../../component/Post/Post"
 
 
@@ -19,7 +19,9 @@ import Post from "../../component/Post/Post"
 
 
 function App() {
-  const [user, setUser] = useState(null);
+const [user, setUser] = useState(getUser());
+
+
   return (
     <div className="App">
       { user ?
@@ -35,6 +37,7 @@ function App() {
       <SideBar />
       <Routes>
         <Route path="/profile" element={<Profile user={user} setUser={setUser}/>} />
+        <Route path="/pokemon" element={<Pokemon user={user} setUser={setUser}/>} />
       </Routes>
       </>
   :
