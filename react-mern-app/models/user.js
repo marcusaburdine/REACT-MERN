@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
-const SALT_ROUNDS = 6
 
 const userSchema = new Schema({
   name: {type: String, required: true},
@@ -17,7 +15,7 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
-  }
+  },
 },
 {
   timestamps: true,
@@ -30,7 +28,7 @@ const userSchema = new Schema({
   }
 });
 
-userSchema.pre('save', async function(next) {
+userSchema.pre('save', async function (next) {
   // 'this' is the user doc
   if (!this.isModified('password')) return next()
 

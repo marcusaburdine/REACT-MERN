@@ -1,3 +1,4 @@
+const User = require('../../models/profile')
 const express = require("express")
 const router = express.Router()
 
@@ -18,7 +19,7 @@ router.put("/:id", (req, res) => {
   req.body.readyToEat = req.body.readyToEat === "on" ? true : false
   Fruit.findByIdAndUpdate(req.params.id, req.body, (err, updatedFruit) => {
     if(!err){
-      res.status(200).redirect(`/pokemon/${req.params.id}`)
+      res.status(200).redirect(`/profile/${req.params.id}`)
     } else {
       res.status(400).send(err)
     }
@@ -33,10 +34,10 @@ router.post("/", (req, res) => {
       req.body.readyToEat = false
     }
 
-    Fruit.create(req.body, (error, createdFruit) => {
+    Profile.create(req.body, (error, createdProfile) => {
         if (!error) {
           // redirects after creating fruit, to the Index page
-          res.status(200).redirect("/pokemon")
+          res.status(200).redirect("/")
         } else {
           res.status(400).send(error)
         }
@@ -45,9 +46,9 @@ router.post("/", (req, res) => {
 
     // EDIT
 router.get("/:id/edit", (req, res) => {
-    Fruit.findById(req.params.id, (err, foundFruit) => {
+    Fruit.findById(req.params.id, (err, foundProfile) => {
       if (!err) {
-        res.status(200).render("pokemon/Edit", {fruit: foundFruit})
+        res.status(200).render("/Edit", {profile: foundProfile})
       } else {
         res.status(400).send({ msg: err.message })
       }
@@ -75,3 +76,15 @@ router.get("/:id", (req, res) => {
 })
 
 module.exports = router
+
+
+const data = [
+  {
+      id: 1,
+      name: "Marcus",
+      avatar: "This is an avatar",
+      biography: " This is a biography",
+      hobbies: "This is a hobbie(s)",
+      post:"This is a post"
+  }
+]

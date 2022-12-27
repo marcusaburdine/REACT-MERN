@@ -21,6 +21,7 @@ app.use(require('./config/checkToken'))
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require("./routes/api/users"))
+app.use('/crud/profile', require("./routes/crud/profile"))
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 
 

@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
 
-
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
 export default function  Form (props){
   //The component must return some JSX
@@ -19,7 +18,7 @@ export default function  Form (props){
     //prevent page from refreshing on form submission
     event.preventDefault()
     //pass the search term to moviesearch prop, which is apps getMovie function
-    props.getPokemon(formData.searchterm)
+    props.getAbility(formData.searchterm)
   }
 
 

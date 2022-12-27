@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import Display from '../../component/Display/PokemonDisplay';
 import Form from '../../component/Form/PokemonForm';
+import Ability from "../../component/Display/AbilitiesDisplay"
 
- function Pokemon() {
+
+function Pokemon() {
     //State to hold movie data
     const [pokemon, setPokemon] = useState(null)
+   
     //variable with your apiKey
-    const apiKey = process.env.REACT_APP_API_KEY
+
 
     //Function to getMovies
     const getPokemon = async (searchTerm) => {
@@ -19,25 +22,25 @@ import Form from '../../component/Form/PokemonForm';
             //set the Movie state to the movie
             setPokemon(pokemon)
             console.log(pokemon)
+
         }
         catch (err) {
             console.eror(err)
+         
         }
+       
     }
 
-    
-    https://pokeapi.co/api/v2/ability/{id or name}/
-    
-      
     useEffect(() => { getPokemon() }, [])
-    
-  
+
+   
+
 
     return (
         <div className="Pokemon">
             <>
                 <Form getPokemon={getPokemon} />
-                <Display pokemon={pokemon} />
+                <Display pokemon={pokemon}  />
             </>
         </div>
 
