@@ -2,7 +2,11 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const mongoose = require("mongoose")
 const { createRequire } = require('module');
+const profileController = require("./controllers/profile")
+
+
 // Always require and configure near the top
 require('dotenv').config()
 
@@ -21,7 +25,7 @@ app.use(require('./config/checkToken'))
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require("./routes/api/users"))
-app.use('/crud/profile', require("./routes/crud/profile"))
+app.use("pages/profile", profileController)
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 
 
