@@ -16,6 +16,9 @@ import Pokemon from "../Pokemon/Pokemon"
 import Abilities from "../Abilities//Abilities"
 import Post from "../../component/Post/Post"
 
+import Tweet from "../../tweet";
+import data from "../../data"
+
 
 
 
@@ -31,7 +34,7 @@ const [user, setUser] = useState(getUser());
       <>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home user={user} setUser={setUser} />} />
+        <Route path="/" element={<Home user={user} setUser={setUser} data={data} />} />
         <Route path="/marketplace" element={<Marketplace user={user} setUser={setUser}/>} />
         <Route path="/groups/" element={<Groups user={user} setUser={setUser}/>} />
         <Route path="/gaming/" element={<Gaming user={user} setUser={setUser}/>} />

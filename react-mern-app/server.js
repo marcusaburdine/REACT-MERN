@@ -4,7 +4,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const mongoose = require("mongoose")
 const { createRequire } = require('module');
-const profileController = require("./controllers/profile")
+
 
 
 // Always require and configure near the top
@@ -25,8 +25,10 @@ app.use(require('./config/checkToken'))
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require("./routes/api/users"))
-app.use("pages/profile", profileController)
+app.use('/api/profile', require("./routes/api/profile"))
 const ensureLoggedIn = require('./config/ensureLoggedIn');
+
+
 
 
 // The following "catch all" route (note the *) is necessary

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const Schema = require('mongoose').Schema;
 
 const profileSchema = new mongoose.Schema({
   name: {type: String, required: true},
@@ -11,7 +12,7 @@ const profileSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const Profile = mongoose.model("Profile", profileSchema)
+module.exports = mongoose.model("Profile", profileSchema)
 
-module.exports = Profile
+
 
