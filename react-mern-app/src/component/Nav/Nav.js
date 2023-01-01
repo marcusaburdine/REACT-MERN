@@ -5,7 +5,7 @@ export default function Nav() {
   return (
 
     <nav className={styles.Nav} >
-      <Link to="/">
+      <Link to="/home">
       <strong>Home</strong>
       </Link>
 
