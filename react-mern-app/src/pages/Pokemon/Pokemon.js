@@ -1,3 +1,4 @@
+import styles from "./Pokemon.module.css"
 import { useState, useEffect } from 'react';
 import  PokemonList from '../../component/List/pokemonList'
 import Display from '../../component/Display/PokemonDisplay';
@@ -59,7 +60,7 @@ function Pokemon() {
 
 
     return (
-        <div className="Pokemon">
+        <div className={styles.pokemon}>
                 
             <Form getPokemon={getPokemon} />
             <Display pokemon={pokemon} />

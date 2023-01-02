@@ -11,7 +11,7 @@ export default function PokemonDisplay({ pokemon }) {
     return (
       <>
         
-          <h1>{pokemon.count}</h1>
+          <h1>{pokemon.name}</h1>
           <h1>{pokemon.count}</h1>
         
         
@@ -22,7 +22,7 @@ export default function PokemonDisplay({ pokemon }) {
   }
 
   const loading = () => {
-    return <h1>No Pokemon to Display</h1>
+    return 
   }
 
   return pokemon ? loaded() : loading()

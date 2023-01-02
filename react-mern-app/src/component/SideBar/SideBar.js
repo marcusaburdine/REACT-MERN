@@ -8,17 +8,17 @@ export default function SideBar() {
 
 
       <Link to="/profile">
-        <img className="sideBar-profile" src="https://img.freepik.com/free-vector/hand-drawn-flat-design-poke-food-illustration_52683-82121.jpg?w=2000" alt="img" />
+        <img  src="https://cdn-icons-png.flaticon.com/512/188/188954.png" alt="img" />
         <p><strong>Profile</strong></p>
       </Link>
 
       <Link to="/pokemon">
-        <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-poke-food-illustration_52683-82121.jpg?w=2000" alt="img" />
+        <img src="https://cdn-icons-png.flaticon.com/512/188/188916.png" alt="img" />
         <p><strong>Pokemon</strong></p>
       </Link>
 
       <Link to="/abilities">
-        <img className="sideBar-profile" src="https://img.freepik.com/free-vector/hand-drawn-flat-design-poke-food-illustration_52683-82121.jpg?w=2000" alt="img" />
+        <img  src="https://icon-library.com/images/pokemon-ball-icon/pokemon-ball-icon-22.jpg" alt="img" />
         <p><strong>Abilities</strong></p>
       </Link>
     </nav>

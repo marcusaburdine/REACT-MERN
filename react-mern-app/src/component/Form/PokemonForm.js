@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import styles from './PokemonForm.module.css'
 
 
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
@@ -24,7 +25,7 @@ export default function  Form (props){
 
 
   return (
-    <div>
+    <div className={styles.form}>
       <form onSubmit={handleSubmit}>
         <input 
           type="text" 

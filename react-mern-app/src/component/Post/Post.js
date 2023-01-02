@@ -15,15 +15,17 @@ function CRUD() {
   const [posts, setPost] = useState(post)
   const [updateState, setUpdateState] = useState(-1)
   return (
-    <div className={styles.mainContainer}>
-      <div>
-        <div className={styles.post}><Create setPost={setPost} /></div>
+<>
+<div className={styles.mainContainer}><Create setPost={setPost} /></div>
+    
+      <div className={styles.bodyContainer}>
+        
         <form onSubmit={handleUpdate}>
             {
               posts.map((current) => (
                 updateState === current.id ? <Edit current={current} posts={posts} setPost={setPost} /> :
-                  <div className={styles.bodyContainer}>
-                    <p>{current.body}</p>
+                  <div>
+                    <div className={styles.bodyText}>{current.body}</div>
                     <button className='edit' onClick={() => handleEdit(current.id)} type="button">Edit</button>
                     <button className='delete' onClick={() => handleDelete(current.id)} type="button">Delete</button>
                    
@@ -37,7 +39,8 @@ function CRUD() {
         </form>
         
       </div>
-    </div>
+    
+    </>
   )
 
   function handleUpdate(event) {
@@ -93,12 +96,13 @@ function Create({ setPost }) {
     bodyRef.current.value = ""
   }
   return (
-    <div >
+    <div>
     <form onSubmit={handleSubmit}>
       <div>
-      <input type="text" name="body" placeholder="Enter Body" ref={bodyRef} />
+      <input className={styles.creatPost} type="text" name="body" placeholder="Speak your mind... " ref={bodyRef} />
       <button type="submit">Create Post</button>
       </div>
+      
     </form>
     </div>
    
