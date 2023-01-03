@@ -21,7 +21,7 @@ export default function PokemonDisplay({ ability }) {
   }
 
   const loading = () => {
-    return <h1>No Abilities to Display</h1>
+    return 
   }
 
   return ability ? loaded() : loading()

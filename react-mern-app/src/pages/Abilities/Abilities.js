@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import styles from "./Abilities.module.css"
 import Display from '../../component/Display/AbilitiesDisplay';
 import Form from '../../component/Form/AbilitiesForm';
 
@@ -30,11 +31,10 @@ function Abilities() {
 
 
     return (
-        <div className="Abilities">
-            <>
+        <div className={styles.abilities}>
+             <header className={styles.header}><h1>ABILITIES</h1></header>
                 <Form getAbility={getAbility} />
                 <Display ability={ability} />
-            </>
         </div>
 
     )

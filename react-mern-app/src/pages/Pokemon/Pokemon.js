@@ -48,9 +48,7 @@ function Pokemon() {
         }
         catch (err) {
             console.eror(err)
-
         }
-
     }
 
     useEffect(() => { getPokemon() }, [])
@@ -61,8 +59,8 @@ function Pokemon() {
 
     return (
         <div className={styles.pokemon}>
-                
-            <Form getPokemon={getPokemon} />
+             <header className={styles.header}><h1>POKEMON</h1></header>
+             <Form getPokemon={getPokemon} />  
             <Display pokemon={pokemon} />
             {/* <PokemonList pokemons={pokemons} ></PokemonList> */}
 

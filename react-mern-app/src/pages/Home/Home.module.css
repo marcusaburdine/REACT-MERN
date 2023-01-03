@@ -1,8 +1,38 @@
-.home{
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-        margin-top: 100px;
-        grid-template-columns: 20% 20% 20% 20% 20%;
-        grid-template-rows: 20% 20% 20% 20% 20%;
-      }
+.home {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 100px;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.header {
+  grid-column: 2/5;
+  grid-row: 1/2;
+  display: flex;
+  align-self: flex-end;
+  border-bottom: 1px solid black;
+  font-size: 36px;
+}
+
+.api {
+  grid-column: 2/5;
+  grid-row: 2/4;
+  background-image: url("https://wallup.net/wp-content/uploads/2019/10/825565-anime-pokemon-red-white.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  border: solid black;
+}
+
+.facebook {
+  grid-column: 2/5;
+  grid-row: 4/6;
+  background-image: url("https://media.wired.com/photos/5954a23f8e8cc150fa8ec722/master/pass/facebook_2015_logo_detail.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  border: solid black;
+}

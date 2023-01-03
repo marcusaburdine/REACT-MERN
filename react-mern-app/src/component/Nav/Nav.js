@@ -26,9 +26,7 @@ export default function Nav() {
       <strong>Gaming</strong>
       </Link>
     </nav>
-    <div className={styles.coverImage} >
-      <div><img className={styles.profileImage} src="https://i.kym-cdn.com/photos/images/original/001/890/895/225"/></div>
-    </div>
+    
     
     </>
   )

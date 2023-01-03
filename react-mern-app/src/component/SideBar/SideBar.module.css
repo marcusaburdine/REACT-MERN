@@ -16,6 +16,7 @@
   }
 
   .SideBar a:hover{
+    width: 200px;
     background-color: grey;
   }
 

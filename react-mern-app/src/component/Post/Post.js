@@ -1,17 +1,11 @@
 import styles from './Post.module.css';
+import post from "../../postData"
 import React, { useRef, useState } from 'react'
 
 
 
 function CRUD() {
-  const post = [
-    {
-      id: 1,
-      body: "Friends, I am the realest coder alive",
-      
-    },
-  ]
-
+console.log(post)
   const [posts, setPost] = useState(post)
   const [updateState, setUpdateState] = useState(-1)
   return (

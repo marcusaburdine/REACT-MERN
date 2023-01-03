@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Nav from "./component/Nav/Nav"
 import SideBar from "./component/SideBar/SideBar"
-
+import profiledata from "./profileData"
 import AuthPage from './pages/AuthPage/AuthPage';
 import Home from "./pages/Home/Home"
 import Marketplace from "./pages/Marketplace/Marketplace"
@@ -17,15 +17,13 @@ import Abilities from "./pages/Abilities/Abilities"
 import UserLogOut from './component/UserLogOut/UserLogOut';
 
 
-
-
-
-
-
-
-function App() {
+function App({}) {
   const [user, setUser] = useState(getUser());
-
+  // const [profile, setProfile] = useState();
+  
+  
+console.log(user)
+console.log(profiledata)
 
   return (
     <div className="App">
@@ -44,7 +42,7 @@ function App() {
 
           <SideBar />
           <Routes>
-            <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
+            <Route path="/profile" element={<Profile user={user} setUser={setUser}   />} />
             <Route path="/pokemon" element={<Pokemon user={user} setUser={setUser} />} />
             <Route path="/abilities" element={<Abilities user={user} setUser={setUser} />} />
           </Routes>
