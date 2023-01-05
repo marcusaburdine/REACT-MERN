@@ -6,9 +6,8 @@ export default function SideBar() {
 
     <nav className={styles.SideBar} >
 
-
       <Link to="/profile">
-        <img  src="https://cdn-icons-png.flaticon.com/512/188/188954.png" alt="img" />
+        <img src="https://cdn-icons-png.flaticon.com/512/188/188954.png" alt="img" />
         <p><strong>Profile</strong></p>
       </Link>
 
@@ -18,7 +17,7 @@ export default function SideBar() {
       </Link>
 
       <Link to="/abilities">
-        <img  src="https://icon-library.com/images/pokemon-ball-icon/pokemon-ball-icon-22.jpg" alt="img" />
+        <img src="https://icon-library.com/images/pokemon-ball-icon/pokemon-ball-icon-22.jpg" alt="img" />
         <p><strong>Abilities</strong></p>
       </Link>
     </nav>

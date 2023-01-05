@@ -1,0 +1,23 @@
+.pokemonDisplay {
+    padding: 20px;
+    grid-column: 2/5;
+    grid-row: 2/4;
+    margin-top: 75px;
+    align-self: flex-start;
+    border: 5px solid black;
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+.pokemonTitle{
+    grid-column: 2/5;
+    grid-row: 2/2;
+    align-self: flex-start;
+    font-size: 24px;
+}
+
+.image {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+}

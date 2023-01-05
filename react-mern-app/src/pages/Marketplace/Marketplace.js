@@ -1,5 +1,5 @@
 import styles from './Marketplace.module.css';
-export default function Main (props){
+export default function Marketplace (){
     return(
-    <h1>This is the Marketplace Component</h1>
+      <div className= {styles.marketplace}><h1 className={styles.title}>This is the Marketplace Component</h1></div>
   )};

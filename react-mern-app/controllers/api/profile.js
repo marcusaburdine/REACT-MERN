@@ -1,96 +1,57 @@
-const express = require("express")
 const Profile = require('../../models/profile')
-const router = express.Router()
 
+module.exports = {
+    index,
+    create,
+    edit,
+    remove,
+    show
+}
 
-router.get("/", async (req, res) => {
-  try {
-    const profile = await Profile.find({});
-    res.render("/", { profile });
-  } catch (err) {
-    res.json({ err });
-  }
-});
-
-  //New
-  router.get("/new", (req, res) => {
-    res.render("Profile/ProfileNew")
-  })
-
-  //DELETE
-  router.delete("/:id", (req, res) => {
-    // get the id from params
-    const id = req.params.id;
-    // delete the fruit
-    Profile.findByIdAndRemove(id)
-      .then((profile) => {
-        // redirect to main page after deleting
-        res.redirect("/profile");
-      })
-      // send error as json
-      .catch((error) => {
-        console.log(error);
-        res.json({ error });
-      });
-  });
-
-   //UPDATE
-   router.put("/:id", async (req, res) => {
+async function index(req, res) {
     try {
-      const id = req.params.id;
-      req.body.watchAgain = req.body.watchAgain === "on" ? true : false;
-      req.body.cast = req.body.cast.split(",")
-      await Profile.findByIdAndUpdate(id, req.body)
-      res.redirect(`/profile/${id}`)
+        console.log(req.profile._id)
+        const profile = await Profile.find({ profile: req.profile._id })
+        res.status(200).json(profile);
     } catch (error) {
-      console.log(error);
-      res.json({ error });
+        res.status(400).json({ msg: error.message });
     }
-  })
+}
 
-   // CREATE
-   router.post("/", async (req, res) => {
+async function create(req, res) {
     try {
-      req.body.watchAgain = req.body.watchAgain === "on" ? true : false;
-      req.body.cast = req.body.cast.split(",")
-      console.log(req.body)
-      const createdProfile = await Profile.create(req.body)
-      res.redirect("/profile")
+        const profile = await Profile.create(req.body)
+        console.log(profile)
+        res.status(200).json(profile)
+    } catch (err) {
+        console.log('error is in controller')
+        res.status(400).json(err)
+    }
+}
+
+async function edit(req, res) {
+    try {
+        const profile = await Profile.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json(profile);
     } catch (error) {
-      console.log(error);
-      res.json({ error });
+        res.status(400).json({ msg: error.message });
     }
-  })
+}
 
-   //Edit 
-   router.get("/:id/edit", (req, res) => {
-    // get the id from params
-    const id = req.params.id;
-    // get the fruit from the database
-    Profile.findById(id)
-      .then((profile) => {
-        // render Edit page and send fruit data
-        res.render("Profile/ProfileEdit", { profile });
-      })
-      // send error as json
-      .catch((error) => {
-        console.log(error);
-        res.json({ error });
-      });
-  });
-  
-   //Show Route
-   router.get("/:id", async (req, res) => {
-    const id = req.params.id
-  
+async function remove(req, res) { 
     try {
-      const profile = await Profile.findById(id)
-      res.render("Profile/ProfileShow", { profile })
-    } catch (error){
-      console.log(error);
-      res.json({ error });
+        const profile = await Profile.findByIdAndDelete(req.params.id);
+        res.status(200).json(profile);
+    } catch (error) {
+        res.status(400).json({ msg: error.message });
     }
-  })
-  module.exports = router
+}
 
-
+async function show(req, res) {
+    try {
+        const profile = await Profile.findById(req.params.id);
+        res.status(200).json(profile);
+    } catch (error) {
+        res.status(400).json({ msg: error.message });
+    }
+}

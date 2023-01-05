@@ -1,5 +1,5 @@
 import styles from './Groups.module.css';
-export default function Main (props){
+export default function Groups (){
     return(
-    <h1>This is the Groups Component</h1>
+      <div className= {styles.groups}><h1 className={styles.title}>This is the Groups Component</h1></div>
   )};

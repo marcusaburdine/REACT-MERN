@@ -39,6 +39,40 @@
   grid-row: 2/4;
   border: solid black;
   border-radius: 10px;
+  text-align: center;
+}
+
+.name{
+  margin-top: 80px;
+  
+  grid-column: 3/4;
+  grid-row: 1/2;
+  font-size: 48px;
+}
+
+.age{
+  margin:40px;
+  font-size: 14px;
+}
+
+.eyeColor{
+  margin:40px;
+  font-size: 14px;
+}
+
+.hairColor{
+  margin:40px;
+  font-size: 14px;
+}
+
+.region{
+  margin:40px;
+  font-size: 14px;
+}
+
+.homeTown{
+  margin:40px;
+  font-size: 14px;
 }
 
 .photos {
@@ -61,4 +95,15 @@
   grid-row: 3/6;
   border: solid black;
   border-radius: 10px;
+}
+
+.newbtn{
+  margin-top: 20px;
+  margin-left: 160px;
+}
+
+.editbtn{
+  margin-top: 20px;
+  margin-left: 160px;
+
 }

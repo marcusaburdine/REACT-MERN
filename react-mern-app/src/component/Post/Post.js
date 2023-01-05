@@ -1,39 +1,41 @@
-import styles from './Post.module.css';
-import post from "../../postData"
-import React, { useRef, useState } from 'react'
-
-
+import styles from "./Post.module.css"
+import { useState, useRef } from "react"
 
 function CRUD() {
-console.log(post)
+  const post = [{
+
+    id: 1,
+    body: "Friends, I am the realest trainer alive.",
+
+  }];
   const [posts, setPost] = useState(post)
   const [updateState, setUpdateState] = useState(-1)
   return (
-<>
-<div className={styles.mainContainer}><Create setPost={setPost} /></div>
-    
-      <div className={styles.bodyContainer}>
-        
+    <>
+      <div className={styles.input}><Create setPost={setPost} /></div>
+
+      <div className={styles.body} >
+
         <form onSubmit={handleUpdate}>
-            {
-              posts.map((current) => (
-                updateState === current.id ? <Edit current={current} posts={posts} setPost={setPost} /> :
+          {
+            posts.map((current) => (
+              updateState === current.id ? <Edit className={styles.body} current={current} posts={posts} setPost={setPost} /> :
+                <>
                   <div>
-                    <div className={styles.bodyText}>{current.body}</div>
-                    <button className='edit' onClick={() => handleEdit(current.id)} type="button">Edit</button>
-                    <button className='delete' onClick={() => handleDelete(current.id)} type="button">Delete</button>
-                   
+                    <div className={styles.bdyval}>{current.body}</div>
+                    <div className={styles.btn}><button onClick={() => handleEdit(current.id)} type="button">Edit</button>
+                    <button onClick={() => handleDelete(current.id)} type="button">Delete</button>
+                    </div>
+                    
                   </div>
-                  
-                
-                  
-              ))
-            }
-          
+                </>
+            ))
+          }
+
         </form>
-        
+
       </div>
-    
+
     </>
   )
 
@@ -62,16 +64,16 @@ function Edit({ current, posts, setPost }) {
   }
 
   return (
-    <div className={styles.edit}>
-      <input type="text" name='body'onChange={handleInput} value={current.body} />
+    <div>
+      <input className={styles.create} type="text" name='body' onChange={handleInput} value={current.body} />
       <button type='submit'>Update</button>
-      </div>
+    </div>
   )
 }
 
 
 function Create({ setPost }) {
-  
+
   const bodyRef = useRef()
 
   function handleSubmit(event) {
@@ -79,27 +81,27 @@ function Create({ setPost }) {
     const body = event.target.elements.body.value;
     const newPost = [
       {
-        id: 4,
+        id: 2,
         body
       },
     ]
     setPost((prevPost) => {
       return prevPost.concat(newPost)
     })
-   
+
     bodyRef.current.value = ""
   }
   return (
     <div>
-    <form onSubmit={handleSubmit}>
-      <div>
-      <input className={styles.creatPost} type="text" name="body" placeholder="Speak your mind... " ref={bodyRef} />
-      <button type="submit">Create Post</button>
-      </div>
-      
-    </form>
+      <form onSubmit={handleSubmit}>
+        <div >
+          <input className={styles.create} type="text" name="body" placeholder="Speak your mind... " ref={bodyRef} />
+          <div><button className={styles.createbtn} type="submit">Create Post</button></div>
+        </div>
+
+      </form>
     </div>
-   
+
   )
 }
 
